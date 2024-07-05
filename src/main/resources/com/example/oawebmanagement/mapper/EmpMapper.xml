@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.oawebmanagement.mapper.EmpMapper">
+    <insert id="join" parameterType="com.example.oawebmanagement.pojo.JoinRequest">
+        insert into join_request (user_id,department_id, status, created_at, updated_at)
+            values (#{userId},#{departmentId},#{status},#{createdAt}, #{updatedAt})
+    </insert>
+    
+    <update id="updateprogress" parameterType="com.example.oawebmanagement.pojo.Work">
+<!--        <if test="">-->
+
+<!--        </if>-->
+        update work set updated_at=#{updatedAt} , status=#{status} where id=#{id}
+    </update>
+</mapper>
